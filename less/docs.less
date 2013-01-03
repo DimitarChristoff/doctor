@@ -1,0 +1,210 @@
+@import url(http://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here);
+
+#customDownload label {
+    font-family: 'Just Me Again Down Here', Verdana, Arial;
+    font-size: 22px;
+}
+
+a.brand {
+  background: url(https://raw.github.com/DimitarChristoff/Epitome/master/example/epitome-logo.png) no-repeat center -5px;
+  width: 250px;
+  height: 20px;
+  display: block;
+}
+
+
+#download {
+    clear: both;
+    margin: 10px;
+}
+
+a {
+    color: #369;
+}
+#header {
+    border-bottom: 1px solid rgba(0,0,0,0.5);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+#header #logo {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    line-height: 1.2em;
+    text-decoration: none;
+}
+#nav li {
+    list-style: none;
+    margin: 0;
+}
+#nav ul {
+    margin: 0;
+}
+
+#nav {
+  position: fixed;
+  top: 0;
+  padding-top:40px;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: @grayDark;
+  border-right: 1px solid black;
+  .box-shadow(rgba(0,0,0,0.10) -1px 0 3px 0 inset);
+  text-shadow: rgba(0, 0, 0, 0.70) 0 1px 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#nav a {
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  .transition(all 0.4s ease-out 0s);
+}
+
+#nav #sections {
+  margin-bottom: 5px;
+  border-bottom: 1px solid @grayDarker;
+/*background: #556C81;*/
+  .box-shadow(rgba(0,0,0,0.15) 0 0 5px);
+}
+
+#nav #sections > li {
+  .transition(all 0.4s ease-out 0s);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#nav #sections > li > a {
+  padding: 5px 15px;
+  color: #fff;
+  font-size: 14px;
+}
+
+#nav #sections > li > a:hover {
+  color: #FFC76D;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+#nav #sections > li a.active {
+  background: @grayDarker !important;
+  color: #FFC76D;
+}
+
+#nav #sections li.active {
+  background: @gray;
+}
+
+#nav #sections ul {
+  margin-bottom: 6px;
+}
+
+#nav #sections ul li a {
+  padding: 1px 25px;
+  font-size: 13px;
+}
+
+#nav #sections ul li a:hover {
+  background: #ddd;
+  background: rgba(0, 0, 0, 0.05);
+  color: #FFC76D;
+}
+
+#nav .extra {
+  padding: 5px 15px;
+  min-height: 1.4em;
+}
+
+#nav .extra a {
+  color: #fff;
+  font-size: 14px;
+}
+
+#nav #travis img {
+  margin-top: 10px;
+  display: block;
+}
+
+#nav > *:last-child {
+  margin-bottom: 50px;
+}
+
+#content {
+  .translate(0, 40px);
+  margin: 0 40px 0 290px;
+  padding: 30px 0 20px;
+  min-height: 100px;
+  max-width: 688px;
+}
+
+#github-ribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#github-ribbon img {
+    border: 0;
+}
+#refresh {
+    z-index: 3;
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 50%;
+    width: 320px;
+    margin-left: -160px;
+    font-family: "Helvetica Neue", "Helvetica", arial, sans-serif;
+    line-height: 1.4em;
+    padding: 10px;
+    color: #fff;
+    text-shadow: rgba(0,0,0,0.30) 0 1px 1px;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: none;
+    text-align: center;
+    background: #666;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.com { color: @gray; }
+.lit { color: #195f91; }
+.pun, .opn, .clo { color: #93a1a1; }
+.fun { color: #dc322f; }
+.str, .atv { color: #D14; }
+.kwd, .linenums .tag { color: #FFC76D }
+.typ, .atn, .dec, .var { color: teal; }
+.pln { color: @grayLighter; }
+
+.prettyprint {
+    padding: 8px;
+    background-color: @grayDarker;
+    border: 1px solid @black;
+}
+.prettyprint.linenums {
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+    margin: 0 0 0 33px; /* IE indents via margin-left */
+}
+ol.linenums li {
+    padding-left: 12px;
+    color: #bebec5;
+    line-height: 18px;
+}
+
+h2.active, h3.active {
+  color: #FFC76D;
+  text-shadow: 0px 0px 15px rgba(0,0,0,.8);
+}
+
+a.travis img {
+  margin-top: 15px;
+}

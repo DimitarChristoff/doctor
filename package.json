@@ -1,0 +1,17 @@
+{
+	"name": "doctor",
+	"version": "0.0.3",
+	"description": "MD docs - markdown to html documentation generator",
+	"dependencies": {
+		"jsdom": "*",
+		"request": "*",
+ 		"prime": "*",
+		"prime-util": "*",
+		"marked": "*",
+		"handlebars": "*"
+	},
+	"engines": {
+		"node": ">=0.8.12"
+	},
+	"main": "doctor.js"
+}
