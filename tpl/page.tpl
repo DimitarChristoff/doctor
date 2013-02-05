@@ -7,7 +7,7 @@
     <!-- Google Analytics -->
     <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-1199722-3']);
+        _gaq.push(['_setAccount', '{{analytics}}']);
         _gaq.push(['_trackPageview']);
         (function() {
             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -30,7 +30,7 @@
 <div id="nav">
     <div class="twitter extra">
         <iframe allowtransparency="true" frameborder="0" scrolling="no" style="width: 162px; height: 20px;"
-                src="https://platform.twitter.com/widgets/follow_button.html?screen_name=D_mitar&amp;show_count=false"></iframe>
+                src="https://platform.twitter.com/widgets/follow_button.html?screen_name={{twitter}}&amp;show_count=false"></iframe>
     </div>
     <ul id="sections"></ul>
     <div class="extra" id="github">
