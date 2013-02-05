@@ -1,19 +1,19 @@
 {
-	"name": "doctor",
-	"version": "0.0.3",
-	"description": "MD docs - markdown to html documentation generator",
-	"devDependencies": {
-		"requirejs": "*",
-		"cheerio": "*",
-		"request": "*",
-		"prime": "*",
-		"prime-util": "*",
-		"marked": "*",
-		"csso": "*",
-		"handlebars": "*"
-	},
-	"engines": {
-		"node": ">=0.8.17"
-	},
-	"main": "doctor.js"
+  "name": "doctor",
+  "version": "0.0.4",
+  "description": "MD docs - markdown to html documentation generator",
+  "devDependencies": {
+    "requirejs": "*",
+    "cheerio": "*",
+    "request": "*",
+    "prime": "*",
+    "prime-util": "*",
+    "marked": "*",
+    "csso": "*",
+    "handlebars": "*"
+  },
+  "engines": {
+    "node": ">=0.8.17"
+  },
+  "main": "doctor.js"
 }
