@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>doctor - md generator</title>
     <link href="css/doctor.css" type="text/css" rel="stylesheet">
 
     
@@ -36,16 +36,35 @@
 
     </div>
     
-    <ul id="sections"><li class="l2"><a href="#use">use</a></li></ul>
+    <ul id="sections"><li class="l2"><a href="#using-as-a-cli-tool">Using as a CLI tool</a></li><li class="l2"><a href="#using-under-nodejs">Using under nodejs</a></li><li class="l2"><a href="#customisation">Customisation</a></li><li class="l2"><a href="#todo">Todo</a></li></ul>
     
 </div>
 <div id="content" class="container">
     <h1>doctor</h1>
 <p>Doctor is MD (er. markdown) to HTML doc generator for node. The viewer is powered by Bootstrap and MooTools. </p>
-<h2 id="use">use</h2>
+<p>This is still very much WIP, but it&#39;s quite usable.</p>
+<h2 id="using-as-a-cli-tool">Using as a CLI tool</h2>
+<p>You can just clone the repo and run it.</p>
 <pre><code class="lang-sh">npm link
-./doctor README.md
-./doctor https://raw.github.com/DimitarChristoff/Epitome/master/README.md</code></pre>
+# run against a local file
+./doctor.js README.md
+# run against a remote file
+./doctor.js https://raw.github.com/DimitarChristoff/Epitome/master/README.md
+# custom title and build loc
+./doctor.js docs.md ../built/ &quot;My documentation&quot;</code></pre>
+<h2 id="using-under-nodejs">Using under nodejs</h2>
+<p>You can also use it as an npm module from within nodejs scripts.</p>
+<pre class="prettyprint linenums"><code class="lang-javascript">var doctor require(&#39;doctor-md&#39;);
+doc.process(&#39;readme.md&#39;, &#39;../docs/&#39;, &#39;My title&#39;, &#39;D_mitar&#39;);</code></pre>
+<p>Just add it to your package.json</p>
+<h2 id="customisation">Customisation</h2>
+<p>You can change the page.hbs handlebars template and edit the .less files, which are compiled in the build. If you edit
+<code>builder.js</code> and add properties to the template engine - it will accept <code>github</code> and <code>travis</code> already.</p>
+<h2 id="todo">Todo</h2>
+<ul>
+<li>add support for <code>npm install -g doctor-md</code></li>
+<li>add support for <code>.mdrc</code> to pass on full options to builder / template, inc twitter, github, travis etc.</li>
+</ul>
 
 </div>
 <script src="js/mootools-yui-compressed.js"></script>
