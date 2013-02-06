@@ -1,35 +1,35 @@
 {
-	"name": "doctor-md",
-	"version": "0.0.1",
-	"description": "MD docs - markdown to html documentation generator",
-	"dependencies": {
-		"request": "*",
-		"prime": "*",
-		"prime-util": "*",
-		"marked": "*",
-		"csso": "*",
-		"handlebars": "*",
-		"recess": "*",
-		"cheerio": "*",
-		"fs-extra": "*"
-	},
-	"engines": {
-		"node": ">=0.8.17"
-	},
-	"main": "doctor.js",
-	"author": "Dimitar Christoff <christoff@gmail.com> (https://twitter.com/D_mitar)",
-	"keywords": [
-		"markdown",
-		"documentation",
-		"html",
-		"bootstrap"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/DimitarChristoff/doctor"
-	},
-	"bugs": {
-		"url": "https://github.com/DimitarChristoff/doctor/issues"
-	},
-	"license": "MIT (http://mootools.net/license.txt)"
+  "name": "doctor-md",
+  "version": "0.0.2",
+  "description": "MD docs - markdown to html documentation generator",
+  "dependencies": {
+    "request": "*",
+    "prime": "*",
+    "prime-util": "*",
+    "marked": "*",
+    "csso": "*",
+    "handlebars": "*",
+    "recess": "*",
+    "cheerio": "*",
+    "fs-extra": "*"
+  },
+  "engines": {
+    "node": ">=0.8.17"
+  },
+  "main": "doctor.js",
+  "author": "Dimitar Christoff <christoff@gmail.com> (https://twitter.com/D_mitar)",
+  "keywords": [
+    "markdown",
+    "documentation",
+    "html",
+    "bootstrap"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DimitarChristoff/doctor"
+  },
+  "bugs": {
+    "url": "https://github.com/DimitarChristoff/doctor/issues"
+  },
+  "license": "MIT (http://mootools.net/license.txt)"
 }
