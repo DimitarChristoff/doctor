@@ -2,19 +2,23 @@
 
 var builder = require('./lib/builder'),
 	request = require('request'),
+	prime = require('prime'),
 	fs = require('fs');
 
+var doctor = new (prime({
+	process: function(uri, output, title, twitter){
+		args = {
+			title: title || '',
+			twitter: twitter || ''
+		};
 
-(function(){
-	var args = process.argv.splice(2);
-	if (!args.length){
-		console.log('Doctor needs to be passed some arguments.');
-		console.log('\tLocal: ./doctor.js README.md');
-		console.log('\tRemote: ./doctor.js https://raw.github.com/DimitarChristoff/doctor/master/README.md');
-		return;
-	}
+		output && (args.output = output);
 
-	var getFile = function(uri, callback){
+		this.getData(uri, function(body){
+			new builder(body, args);
+		})
+	},
+	getData: function(uri, callback){
 		if (uri.match('http')){
 			request(uri, function(error, response, body){
 				if (!error && response.statusCode == 200){
@@ -25,11 +29,15 @@ var builder = require('./lib/builder'),
 		else {
 			callback(fs.readFileSync(uri, 'utf-8'));
 		}
-	};
+	}
+}))();
 
-	getFile(args[0], function(body){
-		new builder(body, {
-			title: 'hai'
-		});
-	});
-}());
+module.exports = doctor;
+
+var args = process.argv.splice(2);
+if (!args.length){
+	return 'See documentation'
+}
+else {
+	doctor.process.apply(doctor, args);
+}
