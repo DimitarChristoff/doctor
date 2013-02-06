@@ -1,6 +1,6 @@
 {
 	"name": "doctor",
-	"version": "0.0.4",
+	"version": "0.0.1",
 	"description": "MD docs - markdown to html documentation generator",
 	"dependencies": {
 		"request": "*",
@@ -16,5 +16,20 @@
 	"engines": {
 		"node": ">=0.8.17"
 	},
-	"main": "doctor.js"
+	"main": "doctor.js",
+	"author": "Dimitar Christoff <christoff@gmail.com> (https://twitter.com/D_mitar)",
+	"keywords": [
+		"markdown",
+		"documentation",
+		"html",
+		"bootstrap"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/DimitarChristoff/doctor"
+	},
+	"bugs": {
+		"url": "https://github.com/DimitarChristoff/doctor/issues"
+	},
+	"license": "MIT (http://mootools.net/license.txt)"
 }
