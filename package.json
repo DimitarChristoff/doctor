@@ -1,5 +1,5 @@
 {
-	"name": "doctor",
+	"name": "doctor-md",
 	"version": "0.0.1",
 	"description": "MD docs - markdown to html documentation generator",
 	"dependencies": {
