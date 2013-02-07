@@ -1,6 +1,6 @@
 {
   "name": "doctor-md",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "MD docs - markdown to html documentation generator",
   "dependencies": {
     "request": "*",
@@ -32,7 +32,7 @@
     "url": "https://github.com/DimitarChristoff/doctor/issues"
   },
   "license": "MIT (http://mootools.net/license.txt)",
-  "bin":{
-	  "doctor": "./bin/doctor"
+  "bin": {
+    "doctor": "./bin/doctor"
   }
 }
