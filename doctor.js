@@ -9,12 +9,10 @@ var pathPrefix = __dirname.substr(-3, 3) == 'bin' ? '../' : './',
 
 var doctor = new (prime({
 	process: function(uri, output, title, twitter){
-		args = {
-			title: title || '',
-			twitter: twitter || ''
-		};
-
+		args = {};
 		output && (args.output = output);
+		title && (args.title = title);
+		twitter && (args.twitter = twitter);
 
 		this.getData(uri, function(body){
 			new builder(body, args);

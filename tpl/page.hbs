@@ -5,7 +5,7 @@
     <title>{{title}}</title>
     <link href="css/doctor.css" type="text/css" rel="stylesheet"/>
 
-    {{#analytics}}
+    {{#if analytics}}
     <!-- Google Analytics -->
     <script type="text/javascript">
         var _gaq = _gaq || [];
@@ -17,40 +17,40 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script>
-    {{/analytics}}
+    {{/if}}
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
             <a class="brand" href="#" style="background-image:url({{background}})"></a>
-            {{#travis}}
+            {{#if travis}}
             <a href="{{travis}}" class="travis">
                 <img src="{{travis}}.png?branch=master"/></a>
-            {{/travis}}
+            {{/if}}
         </div>
     </div>
-    {{#github}}
-    <a id="github-ribbon" href="https://github.com/DimitarChristoff/Epitome"><img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-    {{/github}}
+    {{#if github}}
+    <a id="github-ribbon" href="{{github}}"><img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    {{/if}}
 </div>
 <div id="nav">
-    {{#twitter}}
+    {{#if twitter}}
     <div class="twitter extra">
         <iframe allowtransparency="true" frameborder="0" scrolling="no" style="width: 162px; height: 20px;"
                 src="https://platform.twitter.com/widgets/follow_button.html?screen_name={{twitter}}&amp;show_count=false"></iframe>
 
     </div>
-    {{/twitter}}
+    {{/if}}
     <ul id="sections"></ul>
-    {{#github}}
+    {{#if github}}
     <div class="extra" id="github">
         <a href="{{github}}">Source on Github</a>
     </div>
     <div class="extra" id="github-issues">
         <a href="{{github}}issues">Issues</a>
     </div>
-    {{/github}}
+    {{/if}}
 </div>
 <div id="content" class="container">
     {{&body}}
