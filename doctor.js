@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-var pathPrefix = __dirname.substr(-3, 3) == 3 ? '../' : './',
+var pathPrefix = __dirname.substr(-3, 3) == 'bin' ? '../' : './',
 	builder = require(pathPrefix + 'lib/builder'),
 	request = require('request'),
 	prime = require('prime'),
