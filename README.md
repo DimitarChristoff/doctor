@@ -29,6 +29,13 @@ doc.process('readme.md', '../docs/', 'My title', 'D_mitar');
 ```
 Just add it to your package.json
 
+## Using globally
+
+```sh
+# npm install -g doctor-md
+# doctor README.md
+```
+
 ## Customisation
 
 You can change the page.hbs handlebars template and edit the .less files, which are compiled in the build. If you edit
@@ -36,7 +43,6 @@ You can change the page.hbs handlebars template and edit the .less files, which 
 
 ## Todo
 
-- add support for `npm install -g doctor-md`
 - add support for `.mdrc` to pass on full options to builder / template, inc twitter, github, travis etc.
 
 

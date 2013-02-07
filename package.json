@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/DimitarChristoff/doctor/issues"
   },
-  "license": "MIT (http://mootools.net/license.txt)"
+  "license": "MIT (http://mootools.net/license.txt)",
+  "bin":{
+	  "doctor": "./bin/doctor"
+  }
 }
