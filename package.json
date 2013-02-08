@@ -1,6 +1,6 @@
 {
   "name": "doctor-md",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "MD docs - markdown to html documentation generator",
   "dependencies": {
     "request": "*",
@@ -12,8 +12,8 @@
     "recess": "*",
     "cheerio": "*",
     "fs-extra": "*",
-	"clint": "0.0.6",
-	"colors": "*"
+    "clint": "0.0.6",
+    "colors": "*"
   },
   "engines": {
     "node": ">=0.8.17"
