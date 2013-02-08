@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>hai there</title>
+    <title>Doctor - a markdown docs builder</title>
     <link href="css/doctor.css" type="text/css" rel="stylesheet">
 
     
@@ -13,13 +13,10 @@
         <div class="container">
             <a class="brand" href="#" style="background-image:url()"></a>
             
-            <a href="http://travis-ci.org/DimitarChristoff/Epitome" class="travis">
-                <img src="http://travis-ci.org/DimitarChristoff/Epitome.png?branch=master"></a>
-            
         </div>
     </div>
     
-    <a id="github-ribbon" href="https://github.com/mootools/prime/"><img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <a id="github-ribbon" href="https://github.com/DimitarChristoff/doctor"><img alt="Fork me on GitHub" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
     
 </div>
 <div id="nav">
@@ -32,10 +29,10 @@
     <ul id="sections"><li class="l2"><a href="#using-as-a-cli-tool">Using as a CLI tool</a></li><li class="l2"><a href="#using-under-nodejs">Using under nodejs</a></li><li class="l2"><a href="#using-globally">Using globally</a></li><li class="l2"><a href="#customisation">Customisation</a></li><li class="l2"><a href="#todo">Todo</a></li></ul>
     
     <div class="extra" id="github">
-        <a href="https://github.com/mootools/prime/">Source on Github</a>
+        <a href="https://github.com/DimitarChristoff/doctor">Source on Github</a>
     </div>
     <div class="extra" id="github-issues">
-        <a href="https://github.com/mootools/prime/issues">Issues</a>
+        <a href="https://github.com/DimitarChristoff/doctorissues">Issues</a>
     </div>
     
 </div>
@@ -47,19 +44,37 @@
 <p>You can just clone the repo and run it.</p>
 <pre><code class="lang-sh">npm link
 # run against a local file
-./doctor.js README.md
+./doctor.js -i README.md
 # run against a remote file
-./doctor.js https://raw.github.com/DimitarChristoff/Epitome/master/README.md
+./doctor.js -i https://raw.github.com/DimitarChristoff/Epitome/master/README.md -o ../www/webclient/src/docs/
 # custom title and build loc
-./doctor.js docs.md ../built/ &quot;My documentation&quot;</code></pre>
+./doctor.js -i docs.md -o ../built/ -t &quot;My documentation&quot;</code></pre>
 <h2 id="using-under-nodejs">Using under nodejs</h2>
 <p>You can also use it as an npm module from within nodejs scripts.</p>
 <pre class="prettyprint linenums"><code class="lang-javascript">var doctor require(&#39;doctor-md&#39;);
-doc.process(&#39;readme.md&#39;, &#39;../docs/&#39;, &#39;My title&#39;, &#39;D_mitar&#39;);</code></pre>
+doc.process({
+    source: &#39;readme.md&#39;,
+    output: &#39;../docs/&#39;,
+    title: &#39;My title&#39;,
+    twitter: &#39;D_mitar&#39;
+});</code></pre>
 <p>Just add it to your package.json</p>
 <h2 id="using-globally">Using globally</h2>
 <pre><code class="lang-sh"># npm install -g doctor-md
-# doctor README.md</code></pre>
+# doctor
+
+ , , , __ __. _ . . _
+ / / doctor-md 0.0.4
+
+  --help, -h    : Help using doctor
+  --input, -i   : Input file or URI -i path/to/file.md or -i http://domain.com/file.md
+  --output, -o  : Output folder -o ./build, defaults to ./build
+  --title, -t   : Set page title -t &quot;My title here&quot;, defaults to &quot;Built by doctors&quot;
+  --twitter, -@ : Add twitter follow button -@ D_mitar
+  --github, -g  : Add github repo link, issues and fork ribbon -g https://github.com/mootools/prime/
+  --ci, -c      : Add TravisCI build status badge -c http://travis-ci.org/DimitarChristoff/Epitome
+
+doctor -i README.md -@ D_mitar -g https://github.com/DimitarChristoff/Epitome -t &#39;Epitome MVC Framework&#39; -c http://travis-ci.org/DimitarChristoff/Epitome</code></pre>
 <h2 id="customisation">Customisation</h2>
 <p>You can change the page.hbs handlebars template and edit the .less files, which are compiled in the build. If you edit
 <code>builder.js</code> and add properties to the template engine - it will accept <code>github</code> and <code>travis</code> already.</p>
