@@ -11,7 +11,9 @@
     "handlebars": "*",
     "recess": "*",
     "cheerio": "*",
-    "fs-extra": "*"
+    "fs-extra": "*",
+	"clint": "0.0.6",
+	"colors": "*"
   },
   "engines": {
     "node": ">=0.8.17"
