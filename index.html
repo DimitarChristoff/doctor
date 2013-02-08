@@ -51,7 +51,7 @@
 ./doctor.js -i docs.md -o ../built/ -t &quot;My documentation&quot;</code></pre>
 <h2 id="using-under-nodejs">Using under nodejs</h2>
 <p>You can also use it as an npm module from within nodejs scripts.</p>
-<pre class="prettyprint linenums"><code class="lang-javascript">var doctor require(&#39;doctor-md&#39;);
+<pre class="prettyprint linenums"><code class="lang-javascript">var doctor = require(&#39;doctor-md&#39;);
 doc.process({
     source: &#39;readme.md&#39;,
     output: &#39;../docs/&#39;,
