@@ -24,7 +24,7 @@ npm link
 You can also use it as an npm module from within nodejs scripts.
 
 ```javascript
-var doctor require('doctor-md');
+var doctor = require('doctor-md');
 doc.process({
     source: 'readme.md',
     output: '../docs/',
