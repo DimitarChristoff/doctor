@@ -26,7 +26,7 @@
 
     </div>
     
-    <ul id="sections"><li class="l2"><a href="#using-as-a-cli-tool">Using as a CLI tool</a></li><li class="l2"><a href="#using-under-nodejs">Using under nodejs</a></li><li class="l2"><a href="#using-globally">Using globally</a></li><li class="l2"><a href="#customisation">Customisation</a></li><li class="l2"><a href="#todo">Todo</a></li></ul>
+    <ul id="sections"><li class="l2"><a href="#using-as-a-cli-tool">Using as a CLI tool</a></li><li class="l2"><a href="#using-under-nodejs">Using under nodejs</a></li><li class="l2"><a href="#using-globally">Using globally</a></li><li class="l2"><a href="#customisation">Customisation</a></li><li class="l2"><a href="#deployment">Deployment</a></li><li class="l2"><a href="#todo">Todo</a></li></ul>
     
     <div class="extra" id="github">
         <a href="https://github.com/DimitarChristoff/doctor">Source on Github</a>
@@ -64,7 +64,7 @@ doc.process({
 # doctor
 
  , , , __ __. _ . . _
- / / doctor-md 0.0.4
+ / / doctor-md 0.1.1
 
   --help, -h    : Help using doctor
   --input, -i   : Input file or URI -i path/to/file.md or -i http://domain.com/file.md
@@ -73,11 +73,18 @@ doc.process({
   --twitter, -@ : Add twitter follow button -@ D_mitar
   --github, -g  : Add github repo link, issues and fork ribbon -g https://github.com/mootools/prime/
   --ci, -c      : Add TravisCI build status badge -c http://travis-ci.org/DimitarChristoff/Epitome
+  --template    : Use a custom handlebars template file --template ./tpl/docs.hbs
+  --js          : Use a custom js/ folder to deploy to dist/js --js ./lib/js
+  --less, -l    : Use a custom less/bootstrap.less dir to compile css --l ./less/custom.less
 
 doctor -i README.md -@ D_mitar -g https://github.com/DimitarChristoff/Epitome -t &#39;Epitome MVC Framework&#39; -c http://travis-ci.org/DimitarChristoff/Epitome</code></pre>
 <h2 id="customisation">Customisation</h2>
 <p>You can change the page.hbs handlebars template and edit the .less files, which are compiled in the build. If you edit
 <code>builder.js</code> and add properties to the template engine - it will accept <code>github</code> and <code>travis</code> already.</p>
+<h2 id="deployment">Deployment</h2>
+<p>You can use in projects to create <code>gh-pages</code> on the fly. If your git implementation supports <code>git subtreee</code>, you can:</p>
+<pre><code class="lang-sh">git subtree push --prefix build origin gh-pages</code></pre>
+<p>The above will take the contents of the <code>build</code> folder or wherever your output is and push it into the <code>gh-pages</code> branch.</p>
 <h2 id="todo">Todo</h2>
 <ul>
 <li>add support for <code>.mdrc</code> to pass on full options to builder / template, inc twitter, github, travis etc.</li>
