@@ -5,8 +5,8 @@ var pathPrefix = __dirname.substr(-3, 3) == 'bin' ? '../' : './',
 	builder = require(pathPrefix + 'lib/builder'),
 	request = require('request'),
 	prime = require('prime'),
-	clint  = require('clint')(),
-	json   = require(pathPrefix + 'package'),
+	clint = require('clint')(),
+	json = require(pathPrefix + 'package'),
 	fs = require('fs');
 
 
@@ -39,6 +39,9 @@ clint.command('--title', '-t', 'Set page title ' + '-t "My title here"'.green + 
 clint.command('--twitter', '-@', 'Add twitter follow button ' + '-@ D_mitar'.green);
 clint.command('--github', '-g', 'Add github repo link, issues and fork ribbon ' + '-g https://github.com/mootools/prime/'.green);
 clint.command('--ci', '-c', 'Add TravisCI build status badge ' + '-c http://travis-ci.org/DimitarChristoff/Epitome'.green);
+clint.command('--template', null, 'Use a custom handlebars template file ' + '--template ./tpl/docs.hbs'.green);
+clint.command('--js', null, 'Use a custom js/ folder to deploy to dist/js ' + '--js ./lib/js'.green);
+clint.command('--less', '-l', 'Use a custom less/bootstrap.less dir to compile css ' + '--l ./less/custom.less'.green);
 
 
 var help = function(err){
@@ -89,6 +92,18 @@ else {
 			case "--ci" :
 				if (value)
 					options.travis = value;
+				break;
+			case "--template":
+				if (value)
+					options.pageTemplate = value;
+				break;
+			case "--js":
+				if (value)
+					options.js = value;
+				break;
+			case "--less":
+				if (value)
+					options.bootstrap = value;
 				break;
 		}
 	});
