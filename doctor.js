@@ -41,6 +41,12 @@ var doctor = new (prime({
 
 module.exports = doctor;
 
+var bool = function(value){
+	if (value === 'no' || value === 'false') return false
+	if (value === 'yes' || value === 'true') return true
+	return value
+}
+
 if(require.main === module){
 	clint.command('--help', '-h', 'Help using doctor');
 	clint.command('--input', '-i', 'Input file or URI ' + '-i path/to/file.md'.green + ' or ' + '-i http://domain.com/file.md'.green);
@@ -49,6 +55,7 @@ if(require.main === module){
 	clint.command('--twitter', '-@', 'Add twitter follow button ' + '-@ D_mitar'.green);
 	clint.command('--github', '-g', 'Add github repo link, issues and fork ribbon ' + '-g https://github.com/mootools/prime/'.green);
 	clint.command('--analytics', '-a', 'Add google analytics tracking id ' + '-a UA-1199722-3'.green);
+	clint.command('--disqus', '-d', 'Add disqus comments, pass disqus forum name ' + '-d doctor'.green);
 	clint.command('--ci', '-c', 'Add TravisCI build status badge ' + '-c http://travis-ci.org/DimitarChristoff/Epitome'.green);
 	clint.command('--template', null, 'Use a custom handlebars template file ' + '--template ./tpl/docs.hbs'.green);
 	clint.command('--js', null, 'Use a custom js/ folder to deploy to dist/js ' + '--js ./lib/js'.green);
@@ -131,6 +138,9 @@ if(require.main === module){
 					if (value)
 						opt.analytics = value;
 					break;
+				case "--disqus":
+					if (value)
+						opt.disqus = value;
 			}
 		});
 
