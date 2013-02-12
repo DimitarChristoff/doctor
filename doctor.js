@@ -55,7 +55,7 @@ if(require.main === module){
 	clint.command('--twitter', '-@', 'Add twitter follow button ' + '-@ D_mitar'.green);
 	clint.command('--github', '-g', 'Add github repo link, issues and fork ribbon ' + '-g https://github.com/mootools/prime/'.green);
 	clint.command('--analytics', '-a', 'Add google analytics tracking id ' + '-a UA-1199722-3'.green);
-	clint.command('--disqus', '-d', 'Add disqus comments, pass disqus forum name ' + '-d doctor'.green);
+	clint.command('--disqus', '-d', 'Add disqus comments, pass disqus forum name ' + '-d doctor-md'.green);
 	clint.command('--ci', '-c', 'Add TravisCI build status badge ' + '-c http://travis-ci.org/DimitarChristoff/Epitome'.green);
 	clint.command('--template', null, 'Use a custom handlebars template file ' + '--template ./tpl/docs.hbs'.green);
 	clint.command('--js', null, 'Use a custom js/ folder to deploy to dist/js ' + '--js ./lib/js'.green);
