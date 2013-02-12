@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 'use strict';
+/* eg use:
+doctor -i README.md --title "Doctor, MD to HTML documentation generator for nodejs" -@ D_mitar -g https://github.com/DimitarChristoff/doctor --logo http://cdn1.iconfinder.com/data/icons/PLASTICXP/medical/png/32/medical_bag.png -a UA-1199722-4 -d doctor-md
+*/
 
 var pathPrefix = __dirname.substr(-3, 3) == 'bin' ? '../' : './',
 	builder = require(pathPrefix + 'lib/builder'),
