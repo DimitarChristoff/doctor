@@ -5,7 +5,7 @@ a {
 
 a.brand {
 	background-repeat:no-repeat;
-	background-position: center top;
+	background-position: center center;
 	width: 470px;
 	height: 20px;
 	display: block;
@@ -102,7 +102,19 @@ a.brand {
 #nav .extra a {
 	color: #fff;
 	font-size: 14px;
+	&:hover {
+		color: #FFC76D;
+	}
 }
+
+#nav .extra.generated {
+	font-size: 10px;
+	& a {
+		display: inline-block;
+		font-size: 10px;
+	}
+}
+
 
 #nav #travis img {
 	margin-top: 10px;
