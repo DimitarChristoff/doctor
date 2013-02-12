@@ -7,7 +7,6 @@
     "prime": "*",
     "prime-util": "*",
     "marked": "*",
-    "csso": "*",
     "handlebars": "*",
     "recess": "*",
     "cheerio": "*",
