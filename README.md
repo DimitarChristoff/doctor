@@ -76,21 +76,22 @@ $ doctor
   .         .
 ,-| ,-. ,-. |- ,-. ,-.
 | | | | |   |  | | |
-`-^ `-' `-' `' `-' ' 0.1.2
+`-^ `-' `-' `' `-' ' 0.1.3
 
-  --help, -h    : Help using doctor
-  --input, -i   : Input file or URI -i path/to/file.md or -i http://domain.com/file.md
-  --output, -o  : Output folder -o ./build, defaults to ./build
-  --title, -t   : Set page title -t "My title here", defaults to "Built by doctors"
-  --twitter, -@ : Add twitter follow button -@ D_mitar
-  --github, -g  : Add github repo link, issues and fork ribbon -g https://github.com/mootools/prime/
-  --ci, -c      : Add TravisCI build status badge -c http://travis-ci.org/DimitarChristoff/Epitome
-  --template    : Use a custom handlebars template file --template ./tpl/docs.hbs
-  --js          : Use a custom js/ folder to deploy to dist/js --js ./lib/js
-  --less, -l    : Use a custom less/bootstrap.less dir to compile css --l ./less/custom.less
-  --logo        : Use a custom logo in header --logo http://domain.io/img/logo.png
+  --help, -h      : Help using doctor
+  --input, -i     : Input file or URI -i path/to/file.md or -i http://domain.com/file.md
+  --output, -o    : Output folder -o ./build, defaults to ./build
+  --title, -t     : Set page title -t "My title here", defaults to "Built by doctors"
+  --twitter, -@   : Add twitter follow button -@ D_mitar
+  --github, -g    : Add github repo link, issues and fork ribbon -g https://github.com/mootools/prime/
+  --analytics, -a : Add google analytics tracking id -a UA-1199722-4
+  --ci, -c        : Add TravisCI build status badge -c http://travis-ci.org/DimitarChristoff/Epitome
+  --template      : Use a custom handlebars template file --template ./tpl/docs.hbs
+  --js            : Use a custom js/ folder to deploy to dist/js --js ./lib/js
+  --less, -l      : Use a custom less/bootstrap.less dir to compile css --l ./less/custom.less
+  --logo          : Use a custom logo in header --logo http://domain.io/img/logo.png
 
-$ doctor -i README.md -@ D_mitar -g https://github.com/DimitarChristoff/Epitome -t 'Epitome MVC Framework' -c http://travis-ci.org/DimitarChristoff/Epitome --logo https://github.com/DimitarChristoff/Epitome/raw/master/example/epitome-logo.png
+$ doctor -i README.md -@ D_mitar -g https://github.com/DimitarChristoff/Epitome -t 'Epitome MVC Framework' -c http://travis-ci.org/DimitarChristoff/Epitome --logo https://github.com/DimitarChristoff/Epitome/raw/master/example/epitome-logo.png -a UA-1199722-4
 ```
 
 ## Customisation
