@@ -110,7 +110,4 @@ $ git subtree push --prefix build origin gh-pages
 
 The above will take the contents of the `build` folder or wherever your output is and push it into the `gh-pages` branch.
 
-## Todo
-
-- add support for `.mdrc` to pass on full options to builder / template, inc twitter, github, travis etc.
-
+{{>todo.md}}

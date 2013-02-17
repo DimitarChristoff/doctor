@@ -14,18 +14,38 @@ var pathPrefix = __dirname.substr(-3, 3) == 'bin' ? '../' : './',
 	json = require(pathPrefix + 'package'),
 	fs = require('fs');
 
-
 var doctor = new (prime({
 
 	constructor: function(options){
 		this.builder = new builder(options);
 	},
 
+	getPartials: function(markdown, callback){
+
+		var regex = /{{>([\s\S]+?)}}/g,
+			partials = markdown.match(regex);
+
+		if (partials && partials.length){
+			partials.forEach(function(partial, index){
+				var uri = partial.replace(/([{>}])/g,'');
+				this.getData(uri, function(data){
+					markdown = markdown.replace(partial, data);
+					if (index === partials.length -1)
+						callback(markdown);
+				});
+			}, this);
+		}
+		else {
+			callback(markdown);
+		}
+	},
 	process: function(options){
 		var self = this;
 		this.builder.setOptions(options);
 		this.getData(options.source, function(body){
-			self.builder.buildDocs(body);
+			self.getPartials(body, function(body){
+				self.builder.buildDocs(body);
+			});
 		})
 	},
 	getData: function(uri, callback){
