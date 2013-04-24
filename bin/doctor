@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 'use strict';
+/* eg use:
+doctor -i README.md --title "Doctor, MD to HTML documentation generator for nodejs" -@ D_mitar -g https://github.com/DimitarChristoff/doctor --logo http://cdn1.iconfinder.com/data/icons/PLASTICXP/medical/png/32/medical_bag.png -a UA-1199722-4 -d doctor-md
+*/
 
 var pathPrefix = __dirname.substr(-3, 3) == 'bin' ? '../' : './',
 	builder = require(pathPrefix + 'lib/builder'),
@@ -9,8 +12,8 @@ var pathPrefix = __dirname.substr(-3, 3) == 'bin' ? '../' : './',
 	prime = require('prime'),
 	clint = require('clint')(),
 	json = require(pathPrefix + 'package'),
-	fs = require('fs');
-
+	fs = require('fs'),
+	path = require('path');
 
 var doctor = new (prime({
 
@@ -18,11 +21,45 @@ var doctor = new (prime({
 		this.builder = new builder(options);
 	},
 
+	getPartials: function(markdown, callback){
+
+		var regex = /{{>([\s\S]+?)}}/g,
+			partials = markdown.match(regex);
+
+		if (partials && partials.length){
+			partials.forEach(function(partial, index){
+				var uri = partial.replace(/([{>}])/g,'');
+				this.getData(uri, function(data){
+					markdown = markdown.replace(partial, data);
+					if (index === partials.length -1)
+						callback(markdown);
+				});
+			}, this);
+		}
+		else {
+			callback(markdown);
+		}
+	},
 	process: function(options){
 		var self = this;
 		this.builder.setOptions(options);
+
+		this.builder.pageTemplate = options.pageTemplate
+			? path.resolve(process.cwd(), options.pageTemplate)
+			: path.resolve(this.builder.basePath, this.builder.options.pageTemplate);
+
+		this.builder.js = options.js
+			? path.resolve(process.cwd(), options.js)
+			: path.resolve(this.builder.basePath, this.builder.options.js);
+
+		this.builder.bootstrap = options.bootstrap
+			? path.resolve(process.cwd(), options.bootstrap)
+			: path.resolve(this.builder.basePath, this.builder.options.bootstrap);
+
 		this.getData(options.source, function(body){
-			self.builder.buildDocs(body);
+			self.getPartials(body, function(body){
+				self.builder.buildDocs(body);
+			});
 		})
 	},
 	getData: function(uri, callback){
@@ -41,6 +78,12 @@ var doctor = new (prime({
 
 module.exports = doctor;
 
+var bool = function(value){
+	if (value === 'no' || value === 'false') return false
+	if (value === 'yes' || value === 'true') return true
+	return value
+}
+
 if(require.main === module){
 	clint.command('--help', '-h', 'Help using doctor');
 	clint.command('--input', '-i', 'Input file or URI ' + '-i path/to/file.md'.green + ' or ' + '-i http://domain.com/file.md'.green);
@@ -48,6 +91,8 @@ if(require.main === module){
 	clint.command('--title', '-t', 'Set page title ' + '-t "My title here"'.green + ', defaults to "Built by doctors"');
 	clint.command('--twitter', '-@', 'Add twitter follow button ' + '-@ D_mitar'.green);
 	clint.command('--github', '-g', 'Add github repo link, issues and fork ribbon ' + '-g https://github.com/mootools/prime/'.green);
+	clint.command('--analytics', '-a', 'Add google analytics tracking id ' + '-a UA-1199722-3'.green);
+	clint.command('--disqus', '-d', 'Add disqus comments, pass disqus forum name ' + '-d doctor-md'.green);
 	clint.command('--ci', '-c', 'Add TravisCI build status badge ' + '-c http://travis-ci.org/DimitarChristoff/Epitome'.green);
 	clint.command('--template', null, 'Use a custom handlebars template file ' + '--template ./tpl/docs.hbs'.green);
 	clint.command('--js', null, 'Use a custom js/ folder to deploy to dist/js ' + '--js ./lib/js'.green);
@@ -126,7 +171,13 @@ if(require.main === module){
 					if (value)
 						opt.logo = value;
 					break;
-
+				case "--analytics":
+					if (value)
+						opt.analytics = value;
+					break;
+				case "--disqus":
+					if (value)
+						opt.disqus = value;
 			}
 		});
 
