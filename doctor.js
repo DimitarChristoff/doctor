@@ -12,7 +12,8 @@ var pathPrefix = __dirname.substr(-3, 3) == 'bin' ? '../' : './',
 	prime = require('prime'),
 	clint = require('clint')(),
 	json = require(pathPrefix + 'package'),
-	fs = require('fs');
+	fs = require('fs'),
+	path = require('path');
 
 var doctor = new (prime({
 
@@ -42,6 +43,19 @@ var doctor = new (prime({
 	process: function(options){
 		var self = this;
 		this.builder.setOptions(options);
+
+		this.builder.pageTemplate = options.pageTemplate
+			? path.resolve(process.cwd(), options.pageTemplate)
+			: path.resolve(this.builder.basePath, this.builder.options.pageTemplate);
+
+		this.builder.js = options.js
+			? path.resolve(process.cwd(), options.js)
+			: path.resolve(this.builder.basePath, this.builder.options.js);
+
+		this.builder.bootstrap = options.bootstrap
+			? path.resolve(process.cwd(), options.bootstrap)
+			: path.resolve(this.builder.basePath, this.builder.options.bootstrap);
+
 		this.getData(options.source, function(body){
 			self.getPartials(body, function(body){
 				self.builder.buildDocs(body);
