@@ -15,7 +15,7 @@
     "colors": "*"
   },
   "engines": {
-    "node": ">=0.8.17"
+    "node": ">=0.8.16"
   },
   "main": "doctor.js",
   "author": "Dimitar Christoff <christoff@gmail.com> (https://twitter.com/D_mitar)",
@@ -35,5 +35,8 @@
   "license": "MIT (http://mootools.net/license.txt)",
   "bin": {
     "doctor": "./bin/doctor"
+  },
+  "scripts": {
+    "gen": "./bin/doctor -i README.md --title \"Doctor, MD to HTML documentation generator for nodejs\" -@ D_mitar -g https://github.com/DimitarChristoff/doctor --logo http://cdn1.iconfinder.com/data/icons/PLASTICXP/medical/png/32/medical_bag.png -a UA-1199722-4 -d doctor-md"
   }
 }

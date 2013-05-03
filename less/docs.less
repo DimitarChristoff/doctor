@@ -84,6 +84,9 @@ a.brand {
 							box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.1), 0px -1px 0px rgba(0, 0, 0, 0.25), 0px -1px 0px rgba(0, 0, 0, 0.25) inset;
 							color: #FFC76D;
 						}
+						&.active {
+							color: #FFC76D;
+						}
 					}
 				}
 				> li:first-child {
@@ -137,7 +140,7 @@ a.brand {
 }
 
 #content {
-	.translate(0, 40px);
+	//.translate(0, 40px);
 	margin: 0 40px 0 290px;
 	padding: 30px 0 20px;
 	min-height: 100px;
@@ -146,6 +149,19 @@ a.brand {
 	h1, h2, h3, h4, h5 {
 		color: white;
 		text-shadow: 1px 1px 2px black;
+	}
+	h2.active, h3.active {
+		color: #FFC76D !important;
+		text-shadow: 0px 0px 15px rgba(0, 0, 0, .8) !important;
+	}
+	h2:after {
+		height: 0px;
+		border-bottom: 1px solid #303434;
+		border-top: 1px solid #000000;
+		position: relative;
+		display: block;
+		z-index: 100;
+		content: "";
 	}
 }
 
@@ -227,10 +243,6 @@ ol.linenums {
 	.border-radius(@borderRadiusSmall);
 }
 
-h2.active, h3.active {
-	color: #FFC76D;
-	text-shadow: 0px 0px 15px rgba(0, 0, 0, .8);
-}
 
 a.travis img {
 	margin-top: 15px;
@@ -242,12 +254,7 @@ div.separator {
 	#gradient > .vertical(#4E5459, #3E4347);
 	box-shadow: 0 1px rgba(0, 0, 0, 0.55), 0 -1px rgba(0, 0, 0, 0.55), 0 1px rgba(255, 255, 255, 0.1) inset;
 	color: #FFFFFF;
-	font-family: 'DINMedium';
-	font-size: 14px;
-	line-height: 42px;
-	padding-left: 47px;
 	position: relative;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
-	text-transform: uppercase;
 	z-index: 100;
 }

@@ -1,10 +1,23 @@
+/*jshint mootools:true */
+/*global moostrapScrollspy, prettyPrint */
 (function(){
+	"use strict";
+
 	var nav = document.id('nav');
 
 	nav && new moostrapScrollspy('sections', {
 		offset: -40,
 		onReady: function(){
 			this.scroll();
+			var main = this.main = document.id('content'),
+				body = document.id(document.body),
+				handleClicks = function(e, el){
+					e.stop();
+					body.scrollTo(0, main.getElement(el.get('href')).getPosition().y - 40);
+				};
+
+			this.element.addEvent('click:relay(li > a)', handleClicks);
+			this.main.addEvent('click:relay(a[href^=#])', handleClicks);
 		},
 		onActive: function(el, target){
 			var g = el.getParents("li").getLast();
