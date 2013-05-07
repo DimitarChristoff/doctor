@@ -9,14 +9,12 @@ a {
 
 a.brand {
 	background-repeat: no-repeat;
-	background-position: center center;
-	width: 470px;
-	height: 20px;
+	background-position: 8px center;
+	height: 40px;
 	display: block;
 }
 
 #nav {
-
 	position: fixed;
 	top: 0;
 	//padding-top: 40px;
@@ -29,9 +27,6 @@ a.brand {
 	text-shadow: rgba(0, 0, 0, 0.70) 0 1px 0;
 	overflow-x: hidden;
 	overflow-y: auto;
-	.twitter {
-		margin-top: 40px;
-	}
 
 	ul {
 		margin: 0;
@@ -46,7 +41,7 @@ a.brand {
 		display: block;
 		font-weight: bold;
 		text-decoration: none;
-		color: #fff;
+		color: #ffffff;
 		.transition(all 0.4s ease-out 0s);
 	}
 
@@ -108,7 +103,7 @@ a.brand {
 
 	.extra {
 		color: #0E0D1B;
-		text-shadow: 0 1px 0 rgba(155,155,155,.3);
+		text-shadow: 0 1px 0 rgba(55,155,155,.3);
 		padding: 5px 15px;
 		min-height: 1.4em;
 		text-transform: uppercase;
@@ -141,7 +136,7 @@ a.brand {
 
 #content {
 	//.translate(0, 40px);
-	margin: 0 40px 0 290px;
+	margin: 0 10px 0 290px;
 	padding: 30px 0 20px;
 	min-height: 100px;
 	max-width: 888px;
@@ -257,4 +252,34 @@ div.separator {
 	position: relative;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.6);
 	z-index: 100;
+}
+
+.shadowy(){
+	-ms-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
+	-o-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
+}
+
+div.ace {
+	_height: 400px;
+	min-height: 400px;
+	border: 1px solid #ccc; // fallback for IE7-8
+	border: 1px solid rgba(0, 0, 0, .15);
+	.border-radius(4px); // Make prettyprint styles more spaced out for readability
+	&.prettyprint {
+		margin-bottom: @baseLineHeight;
+	}
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+	.shadowy();
+}
+
+.acely {
+	margin: 0;
+	padding: 0;
+	margin-top: 8px;
+	background: white;
+	border: 0;
+	.shadowy();
 }

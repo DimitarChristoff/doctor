@@ -52,6 +52,10 @@ var doctor = new (prime({
 			? path.resolve(process.cwd(), options.js)
 			: path.resolve(this.builder.basePath, this.builder.options.js);
 
+		this.builder.images = options.images
+			? path.resolve(process.cwd(), options.images)
+			: path.resolve(this.builder.basePath, this.builder.options.images);
+
 		this.builder.bootstrap = options.bootstrap
 			? path.resolve(process.cwd(), options.bootstrap)
 			: path.resolve(this.builder.basePath, this.builder.options.bootstrap);
@@ -96,6 +100,7 @@ if(require.main === module){
 	clint.command('--ci', '-c', 'Add TravisCI build status badge ' + '-c http://travis-ci.org/DimitarChristoff/Epitome'.green);
 	clint.command('--template', null, 'Use a custom handlebars template file ' + '--template ./tpl/docs.hbs'.green);
 	clint.command('--js', null, 'Use a custom js/ folder to deploy to dist/js ' + '--js ./lib/js'.green);
+	clint.command('--images', null, 'Use a custom images/ folder to deploy to dist/images ' + '--images ./lib/images'.green);
 	clint.command('--less', '-l', 'Use a custom less/bootstrap.less dir to compile css ' + '--l ./less/custom.less'.green);
 	clint.command('--logo', null, 'Use a custom logo in header ' + '--logo http://domain.io/img/logo.png'.green);
 
@@ -162,6 +167,10 @@ if(require.main === module){
 				case "--js":
 					if (value)
 						opt.js = value;
+					break;
+				case "--images":
+					if (value)
+						opt.images = value;
 					break;
 				case "--less":
 					if (value)
