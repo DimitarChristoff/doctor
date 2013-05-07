@@ -13,7 +13,9 @@
 				body = document.id(document.body),
 				handleClicks = function(e, el){
 					e.stop();
-					body.scrollTo(0, main.getElement(el.get('href')).getPosition().y - 40);
+					var target = el.get('href');
+					window.location.hash = target;
+					body.scrollTo(0, main.getElement(target).getPosition().y - 40);
 				};
 
 			this.element.addEvent('click:relay(li > a)', handleClicks);
