@@ -44,6 +44,18 @@ var doctor = new (prime({
 		var self = this;
 		this.builder.setOptions(options);
 
+		// bind to events
+		this.builder.on('css', function done(){
+			// css is the last build, when done, fire done on self.
+			self.builder.off('css', done);
+			self.emit('done');
+		});
+
+		this.builder.on('error', function e(error){
+			self.builder.off('error', e);
+			self.emit('error', error);
+		});
+
 		this.builder.pageTemplate = options.pageTemplate
 			? path.resolve(process.cwd(), options.pageTemplate)
 			: path.resolve(this.builder.basePath, this.builder.options.pageTemplate);

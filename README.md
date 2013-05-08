@@ -64,6 +64,16 @@ doc.builder.on('pre', function(){
     console.log(this.html); // can mod this.html before it's written
 });
 
+// when all tasks are done
+doc.on('done', function(){
+	console.log('done');
+});
+
+// when tasks dont work
+doc.on('error', function(msg){
+	console.error(msg);
+});
+
 doc.process({
     source: 'readme.md'
 });
@@ -78,7 +88,7 @@ $ npm install -g doctor-md
 $   .         .
   ,-| ,-. ,-. |- ,-. ,-.
   | | | | |   |  | | |
-  `-^ `-' `-' `' `-' ' 0.1.8
+  `-^ `-' `-' `' `-' ' 0.1.10
 
     --help, -h      : Help using doctor
     --input, -i     : Input file or URI -i path/to/file.md or -i http://domain.com/file.md

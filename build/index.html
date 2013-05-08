@@ -25,7 +25,7 @@
 
 <div id="nav">
 	<div class="separator"></div>
-	<a title="Doctor, MD to HTML documentation generator for nodejs" class="brand" href="#" style="background-image:url(images/logo.png)"></a>
+	<a title="Doctor, MD to HTML documentation generator for nodejs" class="brand" href="#" style="background-image:url(http://cdn1.iconfinder.com/data/icons/PLASTICXP/medical/png/32/medical_bag.png)"></a>
 	<div class="separator"></div>
 	
 		<div class="twitter extra">
@@ -100,6 +100,16 @@ doc.builder.on(&#39;pre&#39;, function(){
     console.log(this.html); // can mod this.html before it&#39;s written
 });
 
+// when all tasks are done
+doc.on(&#39;done&#39;, function(){
+    console.log(&#39;done&#39;);
+});
+
+// when tasks dont work
+doc.on(&#39;error&#39;, function(msg){
+    console.error(msg);
+});
+
 doc.process({
     source: &#39;readme.md&#39;
 });</code></pre>
@@ -109,7 +119,7 @@ doc.process({
 $   .         .
   ,-| ,-. ,-. |- ,-. ,-.
   | | | | |   |  | | |
-  `-^ `-&#39; `-&#39; `&#39; `-&#39; &#39; 0.1.8
+  `-^ `-&#39; `-&#39; `&#39; `-&#39; &#39; 0.1.10
 
     --help, -h      : Help using doctor
     --input, -i     : Input file or URI -i path/to/file.md or -i http://domain.com/file.md
