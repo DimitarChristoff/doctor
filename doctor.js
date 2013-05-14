@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 'use strict';
 /* eg use:
-doctor -i README.md --title "Doctor, MD to HTML documentation generator for nodejs" -@ D_mitar -g https://github.com/DimitarChristoff/doctor --logo http://cdn1.iconfinder.com/data/icons/PLASTICXP/medical/png/32/medical_bag.png -a UA-1199722-4 -d doctor-md
+doctor -i README.md --title "Doctor, MD to HTML documentation generator for nodejs" -@ D_mitar -g https://github.com/DimitarChristoff/doctor --logo images/medical_bag.png -a UA-1199722-4 -d doctor-md
 */
 
-var pathPrefix = __dirname.substr(-3, 3) == 'bin' ? '../' : './',
+var pathPrefix = __dirname.substr(-3, 3) === 'bin' ? '../' : './',
 	builder = require(pathPrefix + 'lib/builder'),
 	options = require('prime-util/prime/options'),
 	emitter = require('prime/emitter'),
@@ -76,12 +76,12 @@ var doctor = new (prime({
 			self.getPartials(body, function(body){
 				self.builder.buildDocs(body);
 			});
-		})
+		});
 	},
 	getData: function(uri, callback){
 		if (uri.match('http')){
 			request(uri, function(error, response, body){
-				if (!error && response.statusCode == 200){
+				if (!error && response.statusCode === 200){
 					callback(body);
 				}
 			});
@@ -90,15 +90,16 @@ var doctor = new (prime({
 			callback(fs.readFileSync(uri, 'utf-8'));
 		}
 	}
-}).implement(new options).implement(new emitter))();
+}).implement(new options()).implement(new emitter()))();
 
 module.exports = doctor;
 
+/*
 var bool = function(value){
-	if (value === 'no' || value === 'false') return false
-	if (value === 'yes' || value === 'true') return true
-	return value
-}
+	if (value === 'no' || value === 'false') return false;
+	if (value === 'yes' || value === 'true') return true;
+	return value;
+};*/
 
 if(require.main === module){
 	clint.command('--help', '-h', 'Help using doctor');
@@ -122,14 +123,14 @@ if(require.main === module){
 		console.warn(',-| ,-. ,-. |- ,-. ,-.'.grey);
 		console.warn('| | | | |   |  | | |'.white);
 		console.warn("`-^ `-' `-' `' `-' ' ".grey + json.version.white + '\n');
-	}
+	};
 
 	var help = function(err){
 		// header
 		logo();
 
 		console.log(clint.help(2, " : ".grey));
-		process.exit(err)
+		process.exit(err);
 	};
 
 
