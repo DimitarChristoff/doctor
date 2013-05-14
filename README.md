@@ -34,11 +34,6 @@ doc.process({
 Just add it to your package.json, `npm install` or `npm link` and start requiring it. See `lib/builder.js` to get an idea
 of the methods you can call and use.
 
-## Using under Grunt
-
-You can now use it as a grunt plugin - https://github.com/DimitarChristoff/grunt-doctor-md, it has support for post processing via assemble and grunt-contrib-copy,
-see the supplied `Gruntfile.js` as an example of the config object.
-
 ### Events under nodejs
 
 The `builder` supports the following events
@@ -84,7 +79,7 @@ doc.process({
 });
 ```
 
-## Using globally
+## Using global CLI
 
 You can install doctor as a global binary available within your npm env:
 
@@ -112,6 +107,12 @@ $   .         .
 
 $ doctor -i README.md -@ D_mitar -g https://github.com/DimitarChristoff/Epitome -t 'Epitome MVC Framework' -c http://travis-ci.org/DimitarChristoff/Epitome --logo images/logo.png -a UA-1199722-4
 ```
+
+## Using under Grunt
+
+You can now use it as a grunt plugin - https://github.com/DimitarChristoff/grunt-doctor-md, it has support for post processing via assemble and grunt-contrib-copy,
+see the supplied `Gruntfile.js` as an example of the config object.
+
 
 ## Customisation
 
