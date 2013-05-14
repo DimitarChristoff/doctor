@@ -34,7 +34,7 @@
 		</div>
 		<div class="separator"></div>
 	
-	<ul id="sections"><li class="l2"><a href="#using-as-a-cli-tool">Using as a CLI tool</a></li><li class="l2"><a href="#using-under-nodejs">Using under nodejs</a><ul><li class="l3"><a href="#events-under-nodejs">Events under nodejs</a></li></ul></li><li class="l2"><a href="#using-globally">Using globally</a></li><li class="l2"><a href="#customisation">Customisation</a><ul><li class="l3"><a href="#runnable-code">Runnable code</a></li></ul></li><li class="l2"><a href="#partials-support">Partials support</a></li><li class="l2"><a href="#todo">Todo</a></li><li class="l2"><a href="#deployment">Deployment</a></li><li class="l2"><a href="#comments">Comments</a></li></ul>
+	<ul id="sections"><li class="l2"><a href="#using-as-a-cli-tool">Using as a CLI tool</a></li><li class="l2"><a href="#using-under-nodejs">Using under nodejs</a></li><li class="l2"><a href="#using-under-grunt">Using under Grunt</a><ul><li class="l3"><a href="#events-under-nodejs">Events under nodejs</a></li></ul></li><li class="l2"><a href="#using-globally">Using globally</a></li><li class="l2"><a href="#customisation">Customisation</a><ul><li class="l3"><a href="#runnable-code">Runnable code</a></li></ul></li><li class="l2"><a href="#partials-support">Partials support</a></li><li class="l2"><a href="#todo">Todo</a></li><li class="l2"><a href="#deployment">Deployment</a></li><li class="l2"><a href="#comments">Comments</a></li></ul>
 	<div class="separator"></div>
 	
 		<div class="extra" id="github">
@@ -73,6 +73,9 @@ doc.process({
 });</code></pre>
 <p>Just add it to your package.json, <code>npm install</code> or <code>npm link</code> and start requiring it. See <code>lib/builder.js</code> to get an idea
 of the methods you can call and use.</p>
+<h2 id="using-under-grunt">Using under Grunt</h2>
+<p>You can now use it as a grunt plugin - <a href="https://github.com/DimitarChristoff/grunt-doctor-md">https://github.com/DimitarChristoff/grunt-doctor-md</a>, it has support for post processing via assemble and grunt-contrib-copy,
+see the supplied <code>Gruntfile.js</code> as an example of the config object.</p>
 <h3 id="events-under-nodejs">Events under nodejs</h3>
 <p>The <code>builder</code> supports the following events</p>
 <ul>
