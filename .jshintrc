@@ -16,7 +16,7 @@
 	"unused": true,
 	"strict": true,
 	"sub": true,
-	"trailing": true,
+	"trailing": false,
 	"smarttabs": true,
 	"laxbreak": true,
 	"boss": true,
