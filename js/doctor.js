@@ -11,7 +11,7 @@
 		var html = el.get('text'),
 			parent = el.getParent('pre'),
 			edit = new Element('div.ace', {
-				html: html
+				text: html
 			}).inject(parent, 'before');
 
 		new Element('div.alert').adopt(
@@ -25,6 +25,14 @@
 		edit.store('editor', editor);
 	});
 
+	main.getElements('h2,h3').each(function(el){
+		new Element('a', {
+			html: '&sect;',
+			title: 'Link to ' + el.get('text'),
+			'class': 'heading-anchor',
+			href: '#' + el.get('id')
+		}).inject(el, 'top');
+	});
 
 	nav && new moostrapScrollspy('sections', {
 		offset: 0,
