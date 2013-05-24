@@ -37,6 +37,6 @@
     "doctor": "./bin/doctor"
   },
   "scripts": {
-    "gen": "./bin/doctor -i README.md --title \"Doctor, MD to HTML documentation generator for nodejs\" -@ D_mitar -g https://github.com/DimitarChristoff/doctor --logo http://cdn1.iconfinder.com/data/icons/PLASTICXP/medical/png/32/medical_bag.png -a UA-1199722-4 -d doctor-md"
+    "gen": "./bin/doctor -i README.md --title \"Doctor, MD to HTML documentation generator for nodejs\" -@ D_mitar -g https://github.com/DimitarChristoff/doctor --logo images/logo.png -a UA-1199722-4 -d doctor-md"
   }
 }
