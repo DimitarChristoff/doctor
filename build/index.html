@@ -24,7 +24,7 @@
 
 <div id="nav">
 	<div class="separator"></div>
-	<a title="Doctor, MD to HTML documentation generator for nodejs" class="brand" href="#" style="background-image:url(images/logo.png)"></a>
+	<a title="Doctor, MD to HTML documentation generator for nodejs" class="brand" href="#" style="background-image:url(images/medical_bag.png)"></a>
 	<div class="separator"></div>
 	
 		<div class="twitter extra">
@@ -33,7 +33,7 @@
 		</div>
 		<div class="separator"></div>
 	
-	<ul id="sections"><li class="l2"><a href="#using-as-a-cli-tool">Using as a CLI tool</a></li><li class="l2"><a href="#using-under-nodejs">Using under nodejs</a><ul><li class="l3"><a href="#events-under-nodejs">Events under nodejs</a></li></ul></li><li class="l2"><a href="#using-global-cli">Using global CLI</a></li><li class="l2"><a href="#using-under-grunt">Using under Grunt</a></li><li class="l2"><a href="#customisation">Customisation</a><ul><li class="l3"><a href="#runnable-code">Runnable code</a></li></ul></li><li class="l2"><a href="#partials-support">Partials support</a></li><li class="l2"><a href="#todo">Todo</a></li><li class="l2"><a href="#deployment">Deployment</a></li><li class="l2"><a href="#comments">Comments</a></li></ul>
+	<ul id="sections"><li class="l2"><a href="#using-as-a-cli-tool">Using as a CLI tool</a></li><li class="l2"><a href="#using-under-nodejs">Using under nodejs</a><ul><li class="l3"><a href="#using-under-nodejs/events-under-nodejs">Events under nodejs</a></li></ul></li><li class="l2"><a href="#using-global-cli">Using global CLI</a></li><li class="l2"><a href="#using-under-grunt">Using under Grunt</a></li><li class="l2"><a href="#customisation">Customisation</a><ul><li class="l3"><a href="#customisation/runnable-code">Runnable code</a></li></ul></li><li class="l2"><a href="#partials-support">Partials support</a></li><li class="l2"><a href="#todo">Todo</a></li><li class="l2"><a href="#deployment">Deployment</a></li><li class="l2"><a href="#comments">Comments</a></li></ul>
 	<div class="separator"></div>
 	
 		<div class="extra" id="github">
@@ -72,7 +72,7 @@ doc.process({
 });</code></pre>
 <p>Just add it to your package.json, <code>npm install</code> or <code>npm link</code> and start requiring it. See <code>lib/builder.js</code> to get an idea
 of the methods you can call and use.</p>
-<h3 id="events-under-nodejs">Events under nodejs</h3>
+<h3 id="using-under-nodejs/events-under-nodejs">Events under nodejs</h3>
 <p>The <code>builder</code> supports the following events</p>
 <ul>
 <li><code>html</code> - fired when HTML processing is done. <code>this.html</code> points to processed markup.</li>
@@ -142,7 +142,7 @@ see the supplied <code>Gruntfile.js</code> as an example of the config object.</
 <h2 id="customisation">Customisation</h2>
 <p>You can change the page.hbs handlebars template and edit the .less files, which are compiled in the build. If you edit
 <code>builder.js</code> and add properties to the template engine - it will accept <code>github</code> and <code>travis</code> already.</p>
-<h3 id="runnable-code">Runnable code</h3>
+<h3 id="customisation/runnable-code">Runnable code</h3>
 <p>Doctor now supports runable code blocks via ACE and an iframe hack. In order to create a block of code that runs with syntax highlighting,
 you need to tag it as <code>ace</code>, so start via <code>```ace</code>. Here is an example that will produce an alert below:</p>
 <pre class="prettyprint linenums"><code class="lang-ace">alert(&#39;this code just run&#39;);</code></pre>
