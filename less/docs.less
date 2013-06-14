@@ -2,9 +2,26 @@
 @navbarBackgroundHighlight: #272C2D;
 @navbarBackground: #151919;
 @bodyBackground: #222628;
+@textColor: #C8C8C8;
 
-a {
-	color: #369;
+// Links
+// -------------------------
+@linkColor: @white;
+@linkColorHover: @white;
+
+.alert {
+	padding: 8px 35px 8px 14px;
+	margin-bottom: @baseLineHeight;
+	// background-color: @warningBackground;
+	border: 0px solid @warningBorder;
+	.border-radius(3px);
+	text-shadow: none;
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
+	-ms-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
+	-o-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
 }
 
 a.brand {
@@ -98,12 +115,11 @@ a.brand {
 			border-right: 2px solid red;
 		}
 
-
 	}
 
 	.extra {
 		color: #0E0D1B;
-		text-shadow: 0 1px 0 rgba(55,155,155,.3);
+		text-shadow: 0 1px 0 rgba(55, 155, 155, .3);
 		padding: 5px 15px;
 		min-height: 1.4em;
 		text-transform: uppercase;
@@ -207,7 +223,7 @@ a.brand {
 }
 
 .pun {
-	color:#FFFFFF;
+	color: #FFFFFF;
 }
 
 .prettyprint {
@@ -254,7 +270,6 @@ ol.linenums {
 	.border-radius(@borderRadiusSmall);
 }
 
-
 a.travis img {
 	margin-top: 15px;
 }
@@ -270,7 +285,7 @@ div.separator {
 	z-index: 100;
 }
 
-.shadowy(){
+.shadowy() {
 	-ms-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
 	-o-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
 	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 7px 0 rgba(0, 0, 0, 0.8) inset;
@@ -298,4 +313,11 @@ div.ace {
 	background: white;
 	border: 0;
 	.shadowy();
+}
+
+.btn-demo {
+	color: #333;
+	&:hover, &:active {
+		color: black;
+	}
 }
