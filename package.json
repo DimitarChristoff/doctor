@@ -8,7 +8,7 @@
     "prime-util": "*",
     "marked": "*",
     "handlebars": "*",
-    "recess": "*",
+    "recess": "1.1.8",
     "cheerio": "*",
     "fs-extra": "*",
     "clint": "0.0.6",
