@@ -6,11 +6,11 @@ doctor -i README.md --title "Doctor, MD to HTML documentation generator for node
 
 var pathPrefix = __dirname.substr(-3, 3) === 'bin' ? '../' : './',
 	builder = require(pathPrefix + 'lib/builder'),
-	options = require('prime-util/prime/options'),
-	emitter = require('prime/emitter'),
+	options = require('primish/options'),
+	emitter = require('primish/emitter'),
 	request = require('request'),
-	prime = require('prime'),
-	clint = require('clint')(),
+	prime = require('primish'),
+	clint = require('clintish')(),
 	json = require(pathPrefix + 'package'),
 	fs = require('fs'),
 	path = require('path');
@@ -48,12 +48,12 @@ var doctor = new (prime({
 		this.builder.on('css', function done(){
 			// css is the last build, when done, fire done on self.
 			self.builder.off('css', done);
-			self.emit('done');
+			self.trigger('done');
 		});
 
 		this.builder.on('error', function e(error){
 			self.builder.off('error', e);
-			self.emit('error', error);
+			self.trigger('error', error);
 		});
 
 		this.builder.pageTemplate = options.pageTemplate
