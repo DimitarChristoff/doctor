@@ -11,7 +11,7 @@
     "fs-extra": "*",
     "colors": "*",
     "clintish": "0.0.2",
-    "primish": "~0.1.3"
+    "primish": "~0.1.4"
   },
   "engines": {
     "node": ">=0.8.16"
