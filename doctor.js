@@ -17,6 +17,8 @@ var pathPrefix = __dirname.substr(-3, 3) === 'bin' ? '../' : './',
 
 var doctor = new (prime({
 
+	implement: [options, emitter],
+
 	constructor: function(options){
 		this.builder = new builder(options);
 	},
@@ -41,7 +43,9 @@ var doctor = new (prime({
 		}
 	},
 	process: function(options){
-		var self = this;
+		var self = this,
+			cwd = process.cwd();
+
 		this.builder.setOptions(options);
 
 		// bind to events
@@ -57,20 +61,20 @@ var doctor = new (prime({
 		});
 
 		this.builder.pageTemplate = options.pageTemplate
-			? path.resolve(process.cwd(), options.pageTemplate)
+			? path.resolve(cwd, options.pageTemplate)
 			: path.resolve(this.builder.basePath, this.builder.options.pageTemplate);
 
 		this.builder.js = options.js
-			? path.resolve(process.cwd(), options.js)
+			? path.resolve(cwd, options.js)
 			: path.resolve(this.builder.basePath, this.builder.options.js);
 
 		this.builder.images = options.images
-			? path.resolve(process.cwd(), options.images)
+			? path.resolve(cwd, options.images)
 			: path.resolve(this.builder.basePath, this.builder.options.images);
 
-		this.builder.bootstrap = options.bootstrap
-			? path.resolve(process.cwd(), options.bootstrap)
-			: path.resolve(this.builder.basePath, this.builder.options.bootstrap);
+		this.builder.less = options.less
+			? path.resolve(cwd, options.less)
+			: path.resolve(this.builder.basePath, this.builder.options.less);
 
 		this.getData(options.source, function(body){
 			self.getPartials(body, function(body){
@@ -90,7 +94,7 @@ var doctor = new (prime({
 			callback(fs.readFileSync(uri, 'utf-8'));
 		}
 	}
-}).implement(new options()).implement(new emitter()))();
+}))();
 
 module.exports = doctor;
 
@@ -107,7 +111,7 @@ if(require.main === module){
 	clint.command('--output', '-o', 'Output folder ' + '-o ./build'.green + ', defaults to ./build');
 	clint.command('--title', '-t', 'Set page title ' + '-t "My title here"'.green + ', defaults to "Built by doctors"');
 	clint.command('--twitter', '-@', 'Add twitter follow button ' + '-@ D_mitar'.green);
-	clint.command('--github', '-g', 'Add github repo link, issues and fork ribbon ' + '-g https://github.com/mootools/prime/'.green);
+	clint.command('--github', '-g', 'Add github repo link, issues and fork ribbon ' + '-g https://github.com/mootools/primish/'.green);
 	clint.command('--analytics', '-a', 'Add google analytics tracking id ' + '-a UA-1199722-3'.green);
 	clint.command('--disqus', '-d', 'Add disqus comments, pass disqus forum name ' + '-d doctor-md'.green);
 	clint.command('--ci', '-c', 'Add TravisCI build status badge ' + '-c http://travis-ci.org/DimitarChristoff/Epitome'.green);
@@ -187,7 +191,7 @@ if(require.main === module){
 					break;
 				case "--less":
 					if (value)
-						opt.bootstrap = value;
+						opt.less = value;
 					break;
 				case "--logo":
 					if (value)

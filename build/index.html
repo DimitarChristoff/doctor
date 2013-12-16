@@ -61,13 +61,22 @@ $ ./doctor.js -i https://raw.github.com/DimitarChristoff/Epitome/master/README.m
 $ ./doctor.js -i docs.md -o ../built/ -t &quot;My documentation&quot; --logo http://domain.io/img/logo.png # custom title and build loc</code></pre>
 <h2 id="using-under-nodejs">Using under nodejs</h2>
 <p>You can also use it as an npm module from within nodejs scripts.</p>
-<pre class="prettyprint linenums"><code class="lang-javascript">var doc = require(&#39;doctor-md&#39;);
+<pre class="prettyprint linenums"><code class="lang-javascript">#!/usr/bin/env node
+&#39;use strict&#39;;
+
+var doc = require(&#39;doctor-md&#39;);
 doc.process({
     source: &#39;readme.md&#39;,
     output: &#39;../docs/&#39;,
     title: &#39;My title&#39;,
     twitter: &#39;D_mitar&#39;,
     pageTemplate: &#39;tpl/mydocs.hbs&#39;, // handlebars,
+    analytics: &#39;UA-1199722-4&#39;, // id here
+    github: &#39;https://github.com/DimitarChristoff/doctor&#39;,
+    disqus: &#39;doctor-md&#39;,
+    // travis: &#39;&#39;,
+    logo: &#39;images/logo.png&#39;,
+    less: &#39;less/bootstrap.less&#39;,
     less: &#39;../bootstrap/less/bootstrap.less&#39; // custom less file
 });</code></pre>
 <p>Just add it to your package.json, <code>npm install</code> or <code>npm link</code> and start requiring it. See <code>lib/builder.js</code> to get an idea

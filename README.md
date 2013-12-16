@@ -21,6 +21,9 @@ $ ./doctor.js -i docs.md -o ../built/ -t "My documentation" --logo http://domain
 You can also use it as an npm module from within nodejs scripts.
 
 ```javascript
+#!/usr/bin/env node
+'use strict';
+
 var doc = require('doctor-md');
 doc.process({
     source: 'readme.md',
@@ -28,6 +31,12 @@ doc.process({
     title: 'My title',
     twitter: 'D_mitar',
     pageTemplate: 'tpl/mydocs.hbs', // handlebars,
+    analytics: 'UA-1199722-4', // id here
+    github: 'https://github.com/DimitarChristoff/doctor',
+    disqus: 'doctor-md',
+    // travis: '',
+    logo: 'images/logo.png',
+    less: 'less/bootstrap.less',
     less: '../bootstrap/less/bootstrap.less' // custom less file
 });
 ```
