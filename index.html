@@ -49,7 +49,7 @@
 	</div>
 </div>
 <div id="content" class="container">
-	<h1>Doctor, MD to HTML documentation generator for nodejs</h1>
+	<h1 id="doctor-md-to-html-documentation-generator-for-nodejs">Doctor, MD to HTML documentation generator for nodejs</h1>
 <p>Doctor is MD (er. markdown) to HTML doc generator for node. The viewer is powered by Bootstrap and MooTools. Generation
  happens entirely client-side and can work offline or through remote URLs of markdown documents.</p>
 <h2 id="using-as-a-cli-tool">Using as a CLI tool</h2>
@@ -58,7 +58,8 @@
 $ npm install .
 $ ./doctor.js -i README.md # agaist a local file
 $ ./doctor.js -i https://raw.github.com/DimitarChristoff/Epitome/master/README.md -o ../www/webclient/src/docs/ # run against a remote file
-$ ./doctor.js -i docs.md -o ../built/ -t &quot;My documentation&quot; --logo http://domain.io/img/logo.png # custom title and build loc</code></pre>
+$ ./doctor.js -i docs.md -o ../built/ -t &quot;My documentation&quot; --logo http://domain.io/img/logo.png # custom title and build loc
+</code></pre>
 <h2 id="using-under-nodejs">Using under nodejs</h2>
 <p>You can also use it as an npm module from within nodejs scripts.</p>
 <pre class="prettyprint linenums"><code class="lang-javascript">#!/usr/bin/env node
@@ -78,7 +79,8 @@ doc.process({
     logo: &#39;images/logo.png&#39;,
     less: &#39;less/bootstrap.less&#39;,
     less: &#39;../bootstrap/less/bootstrap.less&#39; // custom less file
-});</code></pre>
+});
+</code></pre>
 <p>Just add it to your package.json, <code>npm install</code> or <code>npm link</code> and start requiring it. See <code>lib/builder.js</code> to get an idea
 of the methods you can call and use.</p>
 <h3 id="using-under-nodejs/events-under-nodejs">Events under nodejs</h3>
@@ -120,7 +122,8 @@ doc.on(&#39;error&#39;, function(msg){
 
 doc.process({
     source: &#39;readme.md&#39;
-});</code></pre>
+});
+</code></pre>
 <h2 id="using-global-cli">Using global CLI</h2>
 <p>You can install doctor as a global binary available within your npm env:</p>
 <pre><code class="lang-sh">$ npm install -g doctor-md
@@ -144,7 +147,8 @@ $   .         .
     --less, -l      : Use a custom less/bootstrap.less dir to compile css --l ./less/custom.less
     --logo          : Use a custom logo in header --logo http://domain.io/img/logo.png
 
-$ doctor -i README.md -@ D_mitar -g https://github.com/DimitarChristoff/Epitome -t &#39;Epitome MVC Framework&#39; -c http://travis-ci.org/DimitarChristoff/Epitome --logo images/logo.png -a UA-1199722-4</code></pre>
+$ doctor -i README.md -@ D_mitar -g https://github.com/DimitarChristoff/Epitome -t &#39;Epitome MVC Framework&#39; -c http://travis-ci.org/DimitarChristoff/Epitome --logo images/logo.png -a UA-1199722-4
+</code></pre>
 <h2 id="using-under-grunt">Using under Grunt</h2>
 <p>You can now use it as a grunt plugin - <a href="https://github.com/DimitarChristoff/grunt-doctor-md">https://github.com/DimitarChristoff/grunt-doctor-md</a>, it has support for post processing via assemble and grunt-contrib-copy,
 see the supplied <code>Gruntfile.js</code> as an example of the config object.</p>
@@ -154,7 +158,8 @@ see the supplied <code>Gruntfile.js</code> as an example of the config object.</
 <h3 id="customisation/runnable-code">Runnable code</h3>
 <p>Doctor now supports runable code blocks via ACE and an iframe hack. In order to create a block of code that runs with syntax highlighting,
 you need to tag it as <code>ace</code>, so start via <code>```ace</code>. Here is an example that will produce an alert below:</p>
-<pre class="prettyprint linenums"><code class="lang-ace">alert(&#39;this code just run&#39;);</code></pre>
+<pre class="prettyprint linenums"><code class="lang-ace">alert(&#39;this code just run&#39;);
+</code></pre>
 <p>You should move any files you want to have available into the deployable <code>js</code> folder. RequireJS is loaded automatically
 via <code>blank.html</code> from the <code>js</code> folder from the cdnjs.com repo, the rest is up to you.</p>
 <h2 id="partials-support">Partials support</h2>
@@ -170,7 +175,8 @@ via <code>blank.html</code> from the <code>js</code> folder from the cdnjs.com r
 
 <h2 id="deployment">Deployment</h2>
 <p>You can use in projects to create <code>gh-pages</code> on the fly. If your git implementation supports <code>git subtreee</code>, you can:</p>
-<pre><code class="lang-sh">$ git subtree push --prefix build origin gh-pages</code></pre>
+<pre><code class="lang-sh">$ git subtree push --prefix build origin gh-pages
+</code></pre>
 <p>The above will take the contents of the <code>build</code> folder or wherever your output is and push it into the <code>gh-pages</code> branch.</p>
 
 	
