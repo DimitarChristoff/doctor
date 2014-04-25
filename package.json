@@ -1,6 +1,6 @@
 {
   "name": "doctor-md",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "MD docs - markdown to html documentation generator",
   "dependencies": {
     "request": "~2.34.0",
