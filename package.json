@@ -3,18 +3,16 @@
   "version": "0.1.18",
   "description": "MD docs - markdown to html documentation generator",
   "dependencies": {
-    "request": "*",
-    "marked": "*",
-    "handlebars": "*",
-    "recess": "1.1.8",
+    "request": "~2.34.0",
+    "marked": "~0.3.2",
+    "handlebars": "^1.3.0",
     "cheerio": "0.15.0",
-    "fs-extra": "*",
-    "colors": "*",
+    "fs-extra": "~0.8.1",
+    "colors": "~0.6.2",
     "clintish": "~0.0.3",
-    "primish": "~0.3.1"
-  },
-  "engines": {
-    "node": ">=0.8.16"
+    "primish": "0.3.5",
+    "lodash": "~2.4.1",
+    "less": "~1.7.0"
   },
   "main": "doctor.js",
   "author": "Dimitar Christoff <christoff@gmail.com> (https://twitter.com/D_mitar)",
