@@ -11,9 +11,9 @@
 	// convert code blocks that need ace
 	main.getElements('.lang-ace').each(function(el){
 
-		var html = el.get('text'),
+		var code = el.get('text'),
 			parent = el.getParent('pre'),
-			edit = new Element('div.ace[text=' + html + ']').inject(parent, 'before');
+			edit = new Element('div.ace').set('html', code).inject(parent, 'before');
 
 		new Element('div.alert').adopt(
 			new Element('button.btn.btn-demo.btn-primary[html=' + runCode + ']'),
