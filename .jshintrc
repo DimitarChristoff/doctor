@@ -1,7 +1,6 @@
 {
 	"node": true,
 	"browser": true,
-	"es5": true,
 	"esnext": false,
 	"evil": false,
 	"bitwise": false,
@@ -20,7 +19,7 @@
 	"smarttabs": true,
 	"laxbreak": true,
 	"boss": true,
-	"expr": false,
+	"expr": true,
 	"globalstrict": false,
 	"globals": {
 		"require": false,
